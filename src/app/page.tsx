@@ -603,14 +603,13 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center w-fit gap-[20px]">
                   <div className="h-[200px] aspect-[calc(16/9)] bg-[#d7d7d7] rounded-[15px] flex justify-center items-center relative">
-                    <Image
+                    <img
                       src={
                         project.image === ""
                           ? "/image_not_available.png"
                           : project.image
                       }
                       alt={project.title}
-                      fill
                       className="object-cover rounded-[15px] shadow-[0_0_0_0_#c1c1c155] group-hover:shadow-[0_0_30px_2px_#c1c1c155] transition-all duration-500
                       "
                     />
@@ -626,7 +625,7 @@ export default function Home() {
                     <div className="w-full flex gap-[10px]">
                       <div className="w-fit h-[40px] flex items-center bg-[#050505] rounded-[5px] pl-[14px] pr-[5px] group hover:bg-[#101010] cursor-pointer transition-all duration-200 hover:shadow-[0_0_0_1px_#ffffff] active:shadow-[0_0_1px_2px_#ffffff]">
                         <div className="h-full aspect-square flex justify-center items-center brightness-[0.5] group-hover:brightness-[0.7] transition-all duration-200">
-                          <Image
+                          <img
                             src="/github.png"
                             alt="Github"
                             width={32}
@@ -700,7 +699,7 @@ export default function Home() {
         href="https://github.com/iilou/portfolio_2"
         target="_blank"
       >
-        <Image
+        <img
           src="/github.png"
           alt="Github"
           width={32}
