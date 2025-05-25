@@ -8,13 +8,12 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-[#c1c1c1]">
       <div className="h-[250px]"></div>
-      <div className="text-[52px] font-bold leading-[40px]">Service Page</div>
+      <div className="text-[52px] font-bold leading-[40px]">Ecommerce Page</div>
       <div className="text-[22px] text-center font-black text-[#787878]">
         Coming soon...
       </div>
       <div className="text-[15px] text-center font-light text-[#787878]">
-        Hold page for future service site (e.g. dentist, bike repair,
-        hairdresser)
+        Hold page for future ecommerce site (e.g. shop, marketplace)
       </div>
       <div className="h-[150px]"></div>
       <div

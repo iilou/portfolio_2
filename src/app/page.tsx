@@ -370,14 +370,53 @@ export default function Home() {
     window.location.reload();
   };
 
+  const [captive, setCaptive] = useState(false);
+
+  const handleContactsCaptive = () => {
+    setCaptive((prev) => true);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div
       className="font-[family-name:var(--font-geist-sans)] relative transition-colors duration-1000 ease-in-out"
       style={{
         // background: scrollY < 300 ? "#121212" : "#000000",
-        background: scrollY < windowHeight * 0.4 ? "#121212" : "#070707",
+        background: scrollY < windowHeight * 0.2 ? "#121212" : "#070707",
+        overflowX: "hidden",
+        overflowY: captive ? "hidden" : "auto",
       }}
     >
+      <div
+        className="w-full h-full justify-center items-center z-[10000]"
+        style={{
+          display: captive ? "flex" : "none",
+          position: "fixed",
+          top: 0,
+          left: 0,
+          // filter: "backdrop-filter: blur(5px)",
+          backdropFilter: "blur(10px)",
+        }}
+        onClick={() => {
+          setCaptive((prev) => false);
+        }}
+      >
+        <div
+          className="flex flex-col bg-[#121212] w-fit h-fit px-[50px] py-[20px] rounded-[15px] text-[#d7d7d7] text-[20px] font-light gap-[5px]
+          hover:shadow-[0_0_0_1px_#d7d7d7] transition-all"
+          onClick={(e: any) => {
+            e.stopPropagation();
+          }}
+        >
+          <div>Email: mli363@uottawa.ca</div>
+          <div>Email 2: li.marvin.nn@gmail.com</div>
+          <div>Github: https://github.com/iilou</div>
+        </div>
+      </div>
       <div className="w-full h-[100vh] flex flex-col items-center justify-center relative z-[10] bg-transparent">
         <canvas
           className="absolute ffixed top-0 left-0 w-full h-full z-[11]"
@@ -393,7 +432,19 @@ export default function Home() {
             on the internet.
           </div>
           <div className="flex justify-center mt-[30px]">
-            <div className="group text-[#dd4d4d] text-[18px] font-bold shadow-[0_0_1px_0px_#dd4d4d,0_0_1px_1px_#dd4d4d_inset] rounded-[5px] px-[21px] py-[8px] flex justify-center items-center bg-[#121212] w-fit h-fit relative">
+            <div
+              className="group text-[#dd4d4d] text-[18px] font-bold shadow-[0_0_1px_0px_#dd4d4d,0_0_1px_1px_#dd4d4d_inset] cursor-pointer
+            rounded-[5px] px-[21px] py-[8px] flex justify-center items-center bg-[#121212] w-fit h-fit relative"
+              onClick={() => {
+                const pdf = "/resume_cv.pdf";
+                const link = document.createElement("a");
+                link.href = pdf;
+                link.download = pdf;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+              }}
+            >
               <div className="absolute w-[100%] h-[100%] rounded-[5px] top-0 left-0 shadow-[0_0_0px_0px_#dd4d4d,0_0_1px_0px_#dd4d4d_inset] group-hover:scale-x-[1.3] group-hover:scale-y-[2.3] group-hover:rounded-[10px] group-hover:opacity-0 transition-all duration-500 "></div>
               <div className="absolute w-[100%] h-[100%] rounded-[5px] top-0 left-0 shadow-[0_0_0px_0px_#dd4d4d,0_0_1px_0px_#dd4d4d_inset] group-hover:scale-x-[1.3] group-hover:scale-y-[2.3] group-hover:rounded-[10px] group-hover:opacity-0 transition-all duration-500 delay-100"></div>
               <div className="absolute w-[100%] h-[100%] rounded-[5px] top-0 left-0 shadow-[0_0_0px_0px_#dd4d4d,0_0_1px_0px_#dd4d4d_inset] group-hover:scale-x-[1.3] group-hover:scale-y-[2.3] group-hover:rounded-[10px] group-hover:opacity-0 transition-all duration-500 delay-200"></div>
@@ -405,7 +456,14 @@ export default function Home() {
                 />
               </div>
             </div>
-            <div className="bg-[#af7171] text-[#121212] text-[18px] font-bold rounded-[5px] px-[25px] py-[8px] ml-[20px]">
+            <div
+              className="bg-[#af7171] text-[#121212] text-[18px] font-bold rounded-[5px] px-[25px] py-[8px] ml-[20px]
+                hover:bg-[#cf8181] hover:text-[#0f0f0f] hover:shadow-[0_0_15px_3px_#78787851] transition-all duration-200 cursor-pointer
+              "
+              onClick={() => {
+                handleContactsCaptive();
+              }}
+            >
               Contact Me
             </div>
           </div>
@@ -419,7 +477,7 @@ export default function Home() {
               "linear-gradient(to bottom, #12121200 0%, #121212 49%, #12121200 100%)",
           }}
         ></div>
-        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative transition-all duration-300 hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_0px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
+        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_0px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
           {/* <div className="w-full h-fit group-hover:translate-y-[2px] group-hover:translate-x-[30px] transition-all duration-200"> */}
           About
           {/* </div> */}
@@ -443,28 +501,23 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-[400px] text-center flex justify-center items-center text-[#b7b7b7] font-light leading-[20px] h-fit">
+          <div
+            className="w-[700px] text-center flex justify-center items-center text-[#b7b7b7] font-light leading-[20px] h-fit 
+           bg-[#78787811] px-[150px] py-[20px] rounded-[15px] hover:bg-[#78787822] transition-all duration-200"
+          >
             <div>
-              Hi, I'm Marvin, and I am currently learning UI/UX design, my
-              workflow is in the development stage. <br />
-              <br />
-              I'm enrolled in a UI/UX design course at University of Ottawa that
-              delves into key concepts of design. This includes concepts such as
-              user-centered design, heuristic evaluation, etc. For information
-              on the course, you can refer to the{" "}
-              <a
-                href="https://catalogue.uottawa.ca/en/courses/seg/"
-                target="_blank"
-              >
-                University of Ottawa website
-              </a>
-              .
+              Hi, I'm Marvin, and I am currently a student at the University of
+              Ottawa pursuing a Bachelor degree in Software Engineering. <br />
+              <br /> I have a strong interest in creating, designing, and
+              developing software applications that solve real-world problems.
+              Feel free to check out my projects and contact me if you have any
+              questions or opportunities to discuss. <br />
             </div>
           </div>
         </div>
       </div>
       <div className="w-full h-fit flex justify-start befwg-[#1a1a1a] z-[20] relative flex-col items-center">
-        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative transition-all duration-300 hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_1px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
+        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_1px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
           {/* <div className="w-full h-fit group-hover:translate-y-[2px] group-hover:translate-x-[30px] transition-all duration-200"> */}
           Workflow
           {/* </div> */}
@@ -505,7 +558,10 @@ export default function Home() {
             <circle cx="32" cy="12.985" r="4.985" fill="#dd4d4d22" />
           </svg>
         </div>
-        <div className="w-[400px] text-center flex justify-center items-center text-[#b7b7b7] font-light leading-[20px] h-fit mb-[50px]">
+        <div
+          className="w-[700px] text-center flex justify-center items-center text-[#b7b7b7] font-light leading-[20px] h-fit mb-[50px] 
+        bg-[#78787811] px-[150px] py-[20px] rounded-[15px] hover:bg-[#78787822] transition-all duration-200"
+        >
           <div>
             I am currently learning UI/UX design, my workflow is in the
             development stage. <br />
@@ -526,7 +582,7 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full h-fit flex justify-start befwg-[#1a1a1a] z-[20] relative flex-col items-center">
-        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative transition-all duration-300 hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_1px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
+        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_1px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
           {/* <div className="w-full h-fit group-hover:translate-y-[2px] group-hover:translate-x-[30px] transition-all duration-200"> */}
           Projects
           {/* </div> */}
@@ -538,8 +594,8 @@ export default function Home() {
               key={index}
             >
               <div
-                className="w-fit flex flex-col justify-center items-start flex-wrap bg-[#0d0d0d72] rounded-[15px] px-[70px] py-[10px] h-fit group
-                hover:bg-[#070707c2] transition-all duration-1000
+                className="w-fit flex flex-col justify-center items-start flex-wrap bg-[#78787811] rounded-[15px] px-[70px] py-[10px] h-fit group
+                hover:bg-[#78787822] transition-all duration-300
               "
               >
                 <div className="text-[#e73d3d] text-[20px] font-normal text-left w-fit group-hover:font-bold transition-all duration-500">
@@ -591,7 +647,7 @@ export default function Home() {
                       <div
                         className="w-fit h-[40px] flex items-center bg-[#070707] rounded-[5px] pl-[10px] pr-[5px] group hover:bg-[#101010] cursor-pointer transition-all duration-200 hover:shadow-[0_0_0_1px_#ffffff] active:shadow-[0_0_1px_2px_#ffffff]"
                         onClick={() => {
-                          pushRoute(project.link);
+                          pushRoute(project.route);
                         }}
                       >
                         <div className="text-[#b2b2b2] text-[14px] font-black pl-[16px] pr-[1px]">
@@ -637,6 +693,27 @@ export default function Home() {
           opacity: 0.5,
         }}
       ></div> */}
+      <a
+        className="fixed right-[20px] bottom-[20px] w-[50px] h-[50px] flex justify-center items-center bg-[#d7d7d7] rounded-md z-[1000] group
+          transition-all duration-200 hover:bg-[#e7e7e7] hover:shadow-[0_0_17px_1px_#1a1a1a_inset,_0_0_17px_1px_#787878] hover:w-[200px]
+          active:shadow-[0_0_1px_2px_#1a1a1a_inset,_0_0_1px_2px_#787878]"
+        href="https://github.com/iilou/portfolio_2"
+        target="_blank"
+      >
+        <Image
+          src="/github.png"
+          alt="Github"
+          width={32}
+          height={32}
+          className="rounded-[15px] w-[24px] h-[24px] object-cover"
+        />
+        <div className="text-[#121212] text-[14px] font-black pl-[15px] pr-[0px] hidden group-hover:block">
+          Github
+        </div>
+        <div className="h-[50px] w-[34px]  justify-end items-center text-[#121212] text-[14px] font-black hidden group-hover:flex">
+          <OpenInNew className="w-fit h-fit scale-[1.0]" fontSize="small" />
+        </div>
+      </a>
     </div>
   );
 }
