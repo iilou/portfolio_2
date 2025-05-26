@@ -24,7 +24,7 @@ export default function Home() {
     speedY: number;
     order: number;
   }[] = [];
-  const numParticles = 1000;
+  const numParticles = 600;
 
   const hue = 0;
   const hueVelocity = 0.01;
@@ -383,10 +383,10 @@ export default function Home() {
 
   return (
     <div
-      className="font-[family-name:var(--font-geist-sans)] relative transition-colors duration-1000 ease-in-out"
+      className="font-[family-name:var(--font-geist-sans)] relative transition-colors duration-1000 ease-in-out bg-[#121212]"
       style={{
         // background: scrollY < 300 ? "#121212" : "#000000",
-        background: scrollY < windowHeight * 0.2 ? "#121212" : "#070707",
+        background: scrollY < windowHeight * 0.7 ? "#121212" : "#1a1a1a",
         overflowX: "hidden",
         overflowY: captive ? "hidden" : "auto",
       }}
@@ -477,7 +477,10 @@ export default function Home() {
               "linear-gradient(to bottom, #12121200 0%, #121212 49%, #12121200 100%)",
           }}
         ></div>
-        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_0px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
+        <div
+          className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-light bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative 
+         group"
+        >
           {/* <div className="w-full h-fit group-hover:translate-y-[2px] group-hover:translate-x-[30px] transition-all duration-200"> */}
           About
           {/* </div> */}
@@ -517,7 +520,10 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full h-fit flex justify-start befwg-[#1a1a1a] z-[20] relative flex-col items-center">
-        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_1px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
+        <div
+          className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-light bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative 
+        group"
+        >
           {/* <div className="w-full h-fit group-hover:translate-y-[2px] group-hover:translate-x-[30px] transition-all duration-200"> */}
           Workflow
           {/* </div> */}
@@ -582,7 +588,10 @@ export default function Home() {
         </div>
       </div>
       <div className="w-full h-fit flex justify-start befwg-[#1a1a1a] z-[20] relative flex-col items-center">
-        <div className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-normal bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative hover:bg-[#080808] hover:text-[#e42d2d] group hover:shadow-[0_0_0_1px_#dd4d4d] active:shadow-[0_0_1px_2px_#dd4d4d] shadow-[0_0_0px_0px_#dd4d4d55]">
+        <div
+          className="w-[80%] h-[7%] text-[#dd4d4d] text-[32px] font-light bg-[#050505] rounded-[15px]  text-center leading-[36px] mt-[4vh] z-[30] pb-[8px] pt-[24px] relative 
+        group"
+        >
           {/* <div className="w-full h-fit group-hover:translate-y-[2px] group-hover:translate-x-[30px] transition-all duration-200"> */}
           Projects
           {/* </div> */}
@@ -602,7 +611,7 @@ export default function Home() {
                   {project.title}
                 </div>
                 <div className="flex justify-center w-fit gap-[20px]">
-                  <div className="h-[200px] aspect-[calc(16/9)] bg-[#d7d7d7] rounded-[15px] flex justify-center items-center relative">
+                  <div className="h-[200px] w-[330px] bg-[#d7d7d7] rounded-[15px] flex justify-center items-center relative">
                     <img
                       src={
                         project.image === ""
@@ -610,7 +619,7 @@ export default function Home() {
                           : project.image
                       }
                       alt={project.title}
-                      className="object-cover rounded-[15px] shadow-[0_0_0_0_#c1c1c155] group-hover:shadow-[0_0_30px_2px_#c1c1c155] transition-all duration-500
+                      className="w-fit h-fit rounded-[15px] shadow-[0_0_0_0_#c1c1c155] group-hover:shadow-[0_0_30px_2px_#c1c1c155] transition-all duration-500
                       "
                     />
                   </div>
