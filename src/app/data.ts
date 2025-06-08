@@ -8,12 +8,12 @@ const projects : {
     route: string;
 }[] = [
     {
-        title: "Service Site Placeholder",
-        description: "A service site (e.g. dentist, bike repair, hairdresser)",
-        image: "",
-        link: "",
-        tags: [ "Language 1", "Language 2", "Language 3" ],
-        github: "",
+        title: "Springs and Things",
+        description: "The website is meant to be a bike repair service website that displays a vast variety of bike repair services and an appointment booking system.",
+        image: "/service.png",
+        link: "https://seg3125-servicesite.vercel.app/",
+        tags: [ "Javascript", "React js", "Next js", "Tailwind CSS"],
+        github: "https://github.com/iilou/seg3125_servicesite",
         route: "/service",
     },
     {
