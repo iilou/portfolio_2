@@ -17,12 +17,12 @@ const projects : {
         route: "/service",
     },
     {
-        title: "Game Placeholder",
-        description: "A small game",
-        image: "",
-        link: "",
-        tags: ["Example 1", "Example 2", "Example 3"],
-        github: "",
+        title: "Memora",
+        description: "A small memory game where the player has to remember a unordered sequence of tiles.",
+        image: "/game.png",
+        link: "https://memora-nine.vercel.app/",
+        tags: [ "Javascript", "React js", "Next js", "Tailwind CSS"],
+        github: "https://github.com/iilou/memora",
         route: "/game",
     },
     {
