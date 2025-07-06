@@ -29,7 +29,7 @@ const projects : {
         title: "Wings & Teas",
         description: "Pick from our assortment of garden creature themed accessories and perfectly brewed teas.",
         image: "/ecom.png",
-        link: "https://ecom-heq49buv8-iilous-projects.vercel.app/",
+        link: "https://ecom-peach-theta.vercel.app/",
         tags: ["JavaScript", "React", "Next.js", "Tailwind CSS"],
         github: "https://github.com/iilou/ecom",
         route: "/ecommerce",
