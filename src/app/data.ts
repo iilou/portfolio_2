@@ -26,12 +26,12 @@ const projects : {
         route: "/game",
     },
     {
-        title: "E-commerce Site Placeholder",
-        description: "An e-commerce site",
-        image: "",
-        link: "",
-        tags: ["Example 1", "Example 2", "Example 3"],
-        github: "",
+        title: "Wings & Teas",
+        description: "Pick from our assortment of garden creature themed accessories and perfectly brewed teas.",
+        image: "/ecom.png",
+        link: "https://ecom-heq49buv8-iilous-projects.vercel.app/",
+        tags: ["JavaScript", "React", "Next.js", "Tailwind CSS"],
+        github: "https://github.com/iilou/ecom",
         route: "/ecommerce",
     },
     {
