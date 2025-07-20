@@ -35,12 +35,12 @@ const projects : {
         route: "/ecommerce",
     },
     {
-        title: "Analytics Site Placeholder",
-        description: "An analytics site (BI, sport, anything with visualization)",
-        image: "",
-        link: "",
-        tags: ["Example 1", "Example 2", "Example 3"],
-        github: "",
+        title: "Bazaar",
+        description: "Stock data visualization for historical stock information.",
+        image: "/dashboard.png",
+        link: "https://dashboard-nine-snowy-44.vercel.app/",
+        tags: ["JavaScript", "React", "Next.js", "Tailwind CSS", "Chart.js"],
+        github: "https://github.com/iilou/dashboard",
         route: "/analytics",
     },
     // {
